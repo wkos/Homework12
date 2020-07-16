@@ -4,10 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReadData {
-    public static ArrayList<Employee> readDataFromFile(String fileName) {
-        ArrayList<Employee> employees = new ArrayList<>();
+    public static List<Employee> readDataFromFile(String fileName) {
+        List<Employee> employees = new ArrayList<>();
         try (
                 FileReader fileReader = new FileReader(fileName);
                 BufferedReader bufferedReader = new BufferedReader(fileReader)

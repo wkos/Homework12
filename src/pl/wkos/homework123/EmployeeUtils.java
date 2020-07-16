@@ -1,9 +1,10 @@
 package pl.wkos.homework123;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeUtils {
-    public static double averageSalary(ArrayList<Employee> employees) {
+    public static double averageSalary(List<Employee> employees) {
         double sum = 0;
         for (Employee item : employees) {
             sum += item.getSalary();
@@ -11,7 +12,7 @@ public class EmployeeUtils {
         return sum / employees.size();
     }
 
-    public static double minSalary(ArrayList<Employee> employees) {
+    public static double minSalary(List<Employee> employees) {
         double min = employees.get(0).getSalary();
         for (int i = 1; i < employees.size(); i++) {
             double salary = employees.get(i).getSalary();
@@ -20,7 +21,7 @@ public class EmployeeUtils {
         return min;
     }
 
-    public static double maxSalary(ArrayList<Employee> employees) {
+    public static double maxSalary(List<Employee> employees) {
         double max = employees.get(0).getSalary();
         for (int i = 1; i < employees.size(); i++) {
             double salary = employees.get(i).getSalary();
@@ -29,11 +30,11 @@ public class EmployeeUtils {
         return max;
     }
 
-    public static int numberOfEmloyees(ArrayList<Employee> employees) {
+    public static int numberOfEmloyees(List<Employee> employees) {
         return employees.size();
     }
 
-    public static int numberOfDepartmentEmployees(ArrayList<Employee> employees, String department) {
+    public static int numberOfDepartmentEmployees(List<Employee> employees, String department) {
         int counter = 0;
         for (Employee item : employees) {
             String nameOfDepartment = item.getDepartment().getName();
@@ -42,8 +43,8 @@ public class EmployeeUtils {
         return counter;
     }
 
-    public static ArrayList<Department> getDepartments(ArrayList<Employee> employees) {
-        ArrayList<Department> departments = new ArrayList<>();
+    public static List<Department> getDepartments(List<Employee> employees) {
+        List<Department> departments = new ArrayList<>();
         if (employees != null) departments.add(employees.get(0).getDepartment());
         else return null;
         for (Employee employee : employees) {

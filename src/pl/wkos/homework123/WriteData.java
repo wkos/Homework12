@@ -4,12 +4,12 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 public class WriteData {
-    public static void writeDataToScreen(ArrayList<Employee> employees) {
+    public static void writeDataToScreen(List<Employee> employees) {
         System.out.println("Departamenty");
-        ArrayList<Department> departments;
+        List<Department> departments;
         departments = EmployeeUtils.getDepartments(employees);
         for (Department department : departments) {
             System.out.println(department.toString());
@@ -36,7 +36,7 @@ public class WriteData {
         }
     }
 
-    public static void writeDataToFile(ArrayList<Employee> employees, String fileName) {
+    public static void writeDataToFile(List<Employee> employees, String fileName) {
         try (
                 FileWriter fileWriter = new FileWriter(fileName);
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)
@@ -53,7 +53,7 @@ public class WriteData {
             int numberOfEmployees = EmployeeUtils.numberOfEmloyees(employees);
             bufferedWriter.write("Lączna liczba pracowników: " + numberOfEmployees);
             bufferedWriter.newLine();
-            ArrayList<Department> departments = EmployeeUtils.getDepartments(employees);
+            List<Department> departments = EmployeeUtils.getDepartments(employees);
             for (Department department : departments) {
                 bufferedWriter.write("Liczba pracowników w dziale " + department.toString() + ": " +
                         EmployeeUtils.numberOfDepartmentEmployees(employees, department.getName()));

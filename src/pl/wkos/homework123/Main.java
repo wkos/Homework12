@@ -1,10 +1,10 @@
 package pl.wkos.homework123;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Employee> employees;
+        List<Employee> employees;
         String fileName = "employees.csv";
         employees = ReadData.readDataFromFile(fileName);
 
